@@ -4,7 +4,7 @@ const API = 'mAR6uxsraaU09th4C4mB1ltW6s223QsK';
 //get weather 
 
 const getWeather = async (cityId)=>{
-  const baseUrl = 'http://dataservice.accuweather.com/currentconditions/v1/'
+  const baseUrl = 'https://dataservice.accuweather.com/currentconditions/v1/'
   const query = `${cityId}?apikey=${API}`
   const response  = await fetch(baseUrl+query)
   const data = await response.json()
@@ -13,7 +13,7 @@ const getWeather = async (cityId)=>{
 
 // get city info with key
 const getCity = async (city)=>{
-  const baseUrl = 'http://dataservice.accuweather.com/locations/v1/cities/search'
+  const baseUrl = 'https://dataservice.accuweather.com/locations/v1/cities/search'
   let query = `?apikey=${API}&q=${city}`
   const response = await fetch(baseUrl+query)
   const cityData = await response.json()
